@@ -1,1 +1,1 @@
-# neg-bin-regression
+# umi-normalization
