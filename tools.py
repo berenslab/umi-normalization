@@ -76,7 +76,7 @@ def kobak_tsne(data,name='',n_PCs=50,init=None,do_pca=True,seed=42):
 def monitor_progress(gene_id,n_genes,print_time_every=1000,print_dot_every=25):
     if np.mod(gene_id,print_time_every)==0:
         print('')
-        print('##',datetime.datetime.now().time(),'##',gene_id,'of',n_genes,'genes fit',end='')
+        print('##',datetime.now().time(),'##',gene_id,'of',n_genes,'genes fit',end='')
     if np.mod(gene_id,print_dot_every)==0:
         print('.',end='')
 
