@@ -10,6 +10,10 @@ sys.path.append('/tmp/FIt-SNE-master/')
 from fast_tsne import fast_tsne
 from sklearn.decomposition import PCA
 
+#GLMPCA python
+sys.path.append('../../libs/glmpca-py/')
+from glmpca import glmpca
+
 
 
 def add_labels(dataset, xdata,ydata,example_genes,textoffsets,lines,ax):
@@ -220,6 +224,36 @@ def remove_rare_genes(counts,genes,minimum_detected_cells_per_gene):
         print('Of',len(cells_per_gene),'total genes, returning',sum(include_genes),'genes that are detected in %u or more cells.' % (minimum_detected_cells_per_gene))
         print('Output shape:', counts_kept.shape)
         return counts_kept,genes_kept
+    
+def run_glmpca(counts,fam,theta = 100, penalty = 1, optimize_nb_theta=True, maxIter=1000, eps=0.0001, n_PCs=50, seed=42, dataset_label=''):
+    '''Wrapper around GLM PCA by Will Townes: applies GLM PCA with given settings and saves results as pickle'''
+    
+    
+    np.random.seed(seed)
+    ctl = {"maxIter":maxIter, "eps":eps, "optimizeTheta":optimize_nb_theta}
+    if maxIter==1000 and eps == 0.0001:
+        ctl_str=''
+    else:
+        ctl_str='_maxIter%u_eps%s' % (maxIter,eps)
+
+    starttime = str(datetime.now())
+    res = glmpca.glmpca(counts.T,n_PCs,fam=fam,nb_theta=theta,verbose=True,penalty=penalty,ctl=ctl)
+    endtime = str(datetime.now())
+    res['starttime']=starttime
+    res['endtime']=endtime
+    
+    _ = res.pop('glmpca_family')
+    
+    if fam=='poi':
+        path = 'glmpca_results/%sglmpca-py_%s_penalty%u%s.pickle' % (dataset_label,fam,penalty,ctl_str)
+    elif optimize_nb_theta:
+        path = 'glmpca_results/%sglmpca-py_%s_penalty%u%s.pickle' % (dataset_label,fam,penalty,ctl_str)
+    else:
+        path = 'glmpca_results/%sglmpca-py_%s_fixedTheta%u_penalty%u%s.pickle' % (dataset_label,fam,theta,penalty,ctl_str)
+    
+    print('Saving at', path)
+    with open(path,'wb') as f:
+        pickle.dump(res,f)
     
     
     
