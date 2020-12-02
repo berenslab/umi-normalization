@@ -2,14 +2,14 @@
 
 ### Pre-requisites
 
-- `rna-seq-tsne` from https://github.com/berenslab/rna-seq-tsne (version used in the paper: https://github.com/berenslab/rna-seq-tsne/tree/21e3601782d37dd3f0c8e02ed9f239b005c4100f)
-- `FIt-SNE` from https://github.com/KlugerLab/FIt-SNE (version used in the paper: `1.2.1`, https://github.com/KlugerLab/FIt-SNE/releases/tag/v1.2.1)
+
+- `FIt-SNE` by George C. Linderman from https://github.com/KlugerLab/FIt-SNE (version used in the paper: `1.2.1`, https://github.com/KlugerLab/FIt-SNE/releases/tag/v1.2.1)
 - `FFTW` from http://www.fftw.org (version used in the paper: `3.3.8`)
 - `rpy2` from https://rpy2.github.io/ (version used in the paper: `3.2.6`)
-- R package `glmpca` from https://github.com/willtownes/glmpca (version used in the paper: `0.2.0`, https://github.com/willtownes/glmpca/releases/tag/v0.2.0)
-- `glmpca-py` from https://github.com/willtownes/glmpca-py/
+- R package `glmpca` by Will Townes from https://github.com/willtownes/glmpca (version used in the paper: `0.2.0`, https://github.com/willtownes/glmpca/releases/tag/v0.2.0)
+- `glmpca-py` by Will Townes from https://github.com/willtownes/glmpca-py/
 (version used in the paper: https://github.com/willtownes/glmpca-py/tree/a6fc417b08ab5bc21d8ac9e197f4f5518d093385)
-
+- `rna-seq-tsne` by Dmitry Kobak from https://github.com/berenslab/rna-seq-tsne (version used in the paper: https://github.com/berenslab/rna-seq-tsne/tree/21e3601782d37dd3f0c8e02ed9f239b005c4100f)
 
 ### Download instructions for presented datasets
 
