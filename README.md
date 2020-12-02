@@ -2,36 +2,45 @@
 
 ### Pre-requisites
 
-- `rna-seq-tsne` from https://github.com/berenslab/rna-seq-tsne
-- `FIt-SNE` from https://github.com/KlugerLab/FIt-SNE (requires `FFTW`)
-- `rpy2`
+- `rna-seq-tsne` from https://github.com/berenslab/rna-seq-tsne, go here for the exact version used in the paper: https://github.com/berenslab/rna-seq-tsne/tree/21e3601782d37dd3f0c8e02ed9f239b005c4100f
+- `FIt-SNE` from https://github.com/KlugerLab/FIt-SNE, we used version `1.2.1` in the paper (https://github.com/KlugerLab/FIt-SNE/releases/tag/v1.2.1)
+- `FFTW` is a requirement of `FIt-SNE`. We used verion `3.3.8` in the paper)
+- `rpy2` (will install required R package `glmpca` if needed), version `3.2.6` was used in the paper.
+- `glmpca-py` by Will Townes from https://github.com/willtownes/glmpca-py/, go here for the exact version used in the paper: https://github.com/willtownes/glmpca-py/tree/a6fc417b08ab5bc21d8ac9e197f4f5518d093385
 
 
 ### Download instructions for presented datasets
 
 ##### 33k PBMC dataset
+
+###### Counts & Annotations
  - visit https://support.10xgenomics.com/single-cell-gene-expression/datasets 
  - look for '33k PBMC from a healty donor' under "Chromium Demonstration (v1 Chemistry)"
  - provide contact details to proceed to downloads
- - download 'Gene / cell matrix (filtered)' (79.23 MB)
- - extract files `genes.tsv` and `matrix.mtx` to `umi-normalization/datasets/33k_pbmc`
+ - download 'Gene / cell matrix (filtered)' (79.23 MB) 
+ - extract files `genes.tsv` and `matrix.mtx` to `umi-normalization/datasets/33k_pbmc/`
+ - download 'Clustering analysis' (23.81 MB) from the same website
+ - extract folder `analysis` to `umi-normalization/datasets/33k_pbmc/` as well
+
+
+
 
 ##### 10x control / Svensson 2017
  - visit https://figshare.com/articles/svensson_chromium_control_h5ad/7860092 
  - download `svensson_chromium_control.h5ad` (18.82 MB)
- - save at `umi-normalization/datasets/10x`
+ - save at `umi-normalization/datasets/10x/`
 
 ##### inDrop control / Klein 2015
  - visit https://www.ncbi.nlm.nih.gov/geo/ 
  - search for `GSE65525`
  - download the `*.csv.bz2` file for the sample `GSM1599501` (human K562 pure RNA control, 953 samples, 5.1 MB))
- - extract file `GSM1599501_K562_pure_RNA.csv` to `umi-normalization/datasets/indrop`
+ - extract file `GSM1599501_K562_pure_RNA.csv` to `umi-normalization/datasets/indrop/`
 
 ##### MicrowellSeq control / Han 2018
  - visit https://www.ncbi.nlm.nih.gov/geo/ 
  - search for `GSE108097`
  - search for sample `GSM2906413` and download `GSM2906413_EmbryonicStemCell_dge.txt.gz` (EmbryonicStemCell.E14, 7.9 MB)
- - save to `umi-normalization/datasets/microwellseq`
+ - save to `umi-normalization/datasets/microwellseq/`
 
 ##### Retina: All cell classes/ Macosko 2015
 
@@ -43,7 +52,7 @@
  - save to `umi-normalization/datasets/retina/macosko_all`
 ###### Cluster annotations
  - download from http://mccarrolllab.org/wp-content/uploads/2015/05/retina_clusteridentities.txt
- - save to `umi-normalization/datasets/retina/macosko_all`
+ - save to `umi-normalization/datasets/retina/macosko_all/`
 
 
 ##### Retina: Bipolar cells / Shekhar 2016
@@ -52,17 +61,27 @@
  - visit https://www.ncbi.nlm.nih.gov/geo/
  - search for `GSE81904`
  - download `GSE81904_BipolarUMICounts_Cell2016.txt.gz` (42.9 MB)
- - save to `umi-normalization/datasets/retina/shekhar_bipolar`
+ - save to `umi-normalization/datasets/retina/shekhar_bipolar/`
 ###### Cluster annotations
  - visit https://singlecell.broadinstitute.org/single_cell/study/SCP3/retinal-bipolar-neuron-drop-seq
  - click `Download`
  - register with google account
  - download `clust_retinal_bipolar.txt` (1.5 MB)
- - save to `umi-normalization/datasets/retina/shekhar_bipolar`
+ - save to `umi-normalization/datasets/retina/shekhar_bipolar/`
 
 
 ##### Retina: Ganglion cells / Tran 2019
 
-###### Counts & annotations
- - we obtained `RGC_atlas.rds` from personal communication with the authors.
+###### Raw counts
+ - visit https://www.ncbi.nlm.nih.gov/geo/
+ - search for `GSE133382`
+ - download `GSE133382_AtlasRGCs_CountMatrix.csv.gz` (129.3 MB)
+ - extract to `GSE133382_AtlasRGCs_CountMatrix.csv`
+ - save to `umi-normalization/datasets/retina/tran_ganglion/`
+
+###### Annotations and original gene selection
+ - visit https://singlecell.broadinstitute.org/single_cell/study/SCP509/mouse-retinal-ganglion-cell-adult-atlas-and-optic-nerve-crush-time-series
+ - sign in with google account
+ - download `RGC_Atlas.csv` (1.05 GB) and `RGC_Atlas_coordinates.txt` (927 KB)
+ - save to `umi-normalization/datasets/retina/tran_ganglion/`
 
