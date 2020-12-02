@@ -1,4 +1,5 @@
-# umi-normalization
+# Analytic Pearson residuals for normalization of single-cell RNA-seq UMI data
+###### Jan Lause, Philipp Berens, Dmitry Kobak
 
 ### Pre-requisites
 
