@@ -15,7 +15,7 @@ To start, follow these steps:
 Then, you can step through our analysis by following the sequence of the notebooks. There are four independet analyses:
 
  - Reproduction and investigation of the NB regression model by Hafemeister & Satija (Notebookes `01` & `02`, producing Figure 1 from our paper)
- - Estimation of technical overdispersion from negative control datasets (Notbooks `01` & `03`, producing Figure S1)
+ - Estimation of technical overdispersion from negative control datasets (Notebooks `01` & `03`, producing Figure S1)
  - Benchmarking normalization by Analytical Pearson residuals vs. GLM-PCA vs. standard methods:
      - on the PBMC dataset (Notebooks `01`, `04`, `05`, producing Figures 2, S3, S4, S6, S7, S8, and additional figures)
      - on different retinal datasets (Notebooks `06`, `07`, `08`, producing Figures S2, S5, and additional figures)
@@ -26,10 +26,10 @@ We recommend to run the code on a powerful machine with at least 150 GB RAM.
 
 ### Pre-requisites
 
-
+- Python (version used in the paper: `3.6.9`)
 - `FIt-SNE` by George C. Linderman from https://github.com/KlugerLab/FIt-SNE (version used in the paper: `1.2.1`, https://github.com/KlugerLab/FIt-SNE/releases/tag/v1.2.1)
 - `FFTW` from http://www.fftw.org (version used in the paper: `3.3.8`)
-- `rpy2` from https://rpy2.github.io/ (version used in the paper: `3.2.6`)
+- `rpy2` from https://rpy2.github.io/ (version used in the paper `3.2.6`, along with `R` version `3.6.2`)
 - R package `glmpca` by Will Townes from https://github.com/willtownes/glmpca (version used in the paper: `0.2.0`, https://github.com/willtownes/glmpca/releases/tag/v0.2.0)
 - `glmpca-py` by Will Townes from https://github.com/willtownes/glmpca-py/
 (version used in the paper: https://github.com/willtownes/glmpca-py/tree/a6fc417b08ab5bc21d8ac9e197f4f5518d093385)
