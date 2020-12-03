@@ -1,6 +1,26 @@
 # Analytic Pearson residuals for normalization of single-cell RNA-seq UMI data
 ###### Jan Lause, Philipp Berens, Dmitry Kobak
 
+
+### How to use this repository
+
+This repository contains the code to reproduce the analysis presented in our preprint on UMI data normalization (https://www.biorxiv.org/content/10.1101/2020.12.01.405886v1).
+
+To start, follow these steps:
+
+ - make sure your system has the required software installed (see pre-requisites below)
+ - clone the repository to your system
+ - follow the dataset download instructions below
+ 
+Then, you can step through our analysis by following the sequence of the notebooks. There are four independet analyses:
+
+ - Reproduction and investigation of the NB regression model by Hafemeister & Satija (2019) - Notebookes 01 and 02, producing Figure 1 from our paper
+ - Estimation of technical overdispersion from negative control datasets - Notbooks 01 and 03, producing Figure S1
+ - Benchmarking normalization by Analytical Pearson residuals vs. GLM-PCA vs. standard methods:
+     - on the PBMC dataset (Notebooks 01, 04, 05), producing Figures 2, S3, S4, S6, S7, S8, and additional figures
+     - on different retinal datasets (Notebooks 06, 07, 08), producing Figures S2, S5, and additional figures
+
+
 ### Pre-requisites
 
 
