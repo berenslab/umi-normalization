@@ -1,21 +1,21 @@
 # Analytic Pearson residuals for normalization of single-cell RNA-seq UMI data
-###### Jan Lause, Philipp Berens, Dmitry Kobak
+###### Jan Lause, Philipp Berens & Dmitry Kobak
 
 
 ### How to use this repository
 
-This repository contains the code to reproduce the analysis presented in our preprint on UMI data normalization (https://www.biorxiv.org/content/10.1101/2020.12.01.405886v1).
+This repository contains the code to reproduce the analysis presented in our paper on UMI data normalization (Lause, Berens & Kobak (2020), https://www.biorxiv.org/content/10.1101/2020.12.01.405886v1).
 
 To start, follow these steps:
 
  - install the required software listed below
  - clone this repository to your system
- - go to `tools.py`, and adapt the three import paths as needed
+ - go to `tools.py` and adapt the three import paths as needed
  - follow the dataset download instructions below
  
 Then, you can step through our analysis by following the sequence of the notebooks. There are four independet analyses:
 
- - Reproduction and investigation of the NB regression model by Hafemeister & Satija (Notebookes `01` & `02`, producing Figure 1 from our paper)
+ - Reproduction of the NB regression model by Hafemeister & Satija (2019) and investigation of alternative models (Notebookes `01` & `02`, producing Figure 1 from our paper)
  - Estimation of technical overdispersion from negative control datasets (Notebooks `01` & `03`, producing Figure S1)
  - Benchmarking normalization by Analytical Pearson residuals vs. GLM-PCA vs. standard methods:
      - on the PBMC dataset (Notebooks `01`, `04`, `05`, producing Figures 2, S3, S4, S6, S7, S8, and additional figures)
@@ -24,6 +24,8 @@ Then, you can step through our analysis by following the sequence of the noteboo
 Each of the analyses will first preprocess and filter the datasets. Next, computationally expensive tasks are done (NB regression fits, GLM-PCA, t-SNE, simulations of negative control data, ..) and the results are saved as files. For the Benchmarking normalization analysis, this is done in separate notebooks. Finally, the results files are loaded for plotting (again in separate notebooks for the Benchmarking analysis).
 
 We recommend to run the code on a powerful machine with at least 150 GB RAM.
+
+For questions or feedback, feel free to use the issue system or email us.
 
 ### Pre-requisites
 
