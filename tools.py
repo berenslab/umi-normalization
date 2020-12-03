@@ -3,16 +3,17 @@ import seaborn as sns
 from datetime import datetime
 import pickle
 from scipy import sparse
+from sklearn.decomposition import PCA
 
 
 import sys
-sys.path.append('/tmp/FIt-SNE-master/')
+sys.path.append('/tmp/FIt-SNE-master/')       ### ADAPT PATH TO FIt-SNE REPO AS NEEDED
 from fast_tsne import fast_tsne
-from sklearn.decomposition import PCA
-
-#GLMPCA python
-sys.path.append('../../libs/glmpca-py/')
+sys.path.append('../../libs/glmpca-py/')      ### ADAPT PATH TO glmpca-py REPO AS NEEDED
 from glmpca import glmpca
+sys.path.append('../../libs/rna-seq-tsne/')   ### ADAPT PATH TO rna-seq-tsne REPO AS NEEDED
+import rnaseqTools
+
 
 
 
