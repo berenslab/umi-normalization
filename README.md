@@ -14,12 +14,15 @@ To start, follow these steps:
  
 Then, you can step through our analysis by following the sequence of the notebooks. There are four independet analyses:
 
- - Reproduction and investigation of the NB regression model by Hafemeister & Satija (2019) - Notebookes 01 and 02, producing Figure 1 from our paper
- - Estimation of technical overdispersion from negative control datasets - Notbooks 01 and 03, producing Figure S1
+ - Reproduction and investigation of the NB regression model by Hafemeister & Satija (Notebookes `01` & `02`, producing Figure 1 from our paper)
+ - Estimation of technical overdispersion from negative control datasets (Notbooks `01` & `03`, producing Figure S1)
  - Benchmarking normalization by Analytical Pearson residuals vs. GLM-PCA vs. standard methods:
-     - on the PBMC dataset (Notebooks 01, 04, 05), producing Figures 2, S3, S4, S6, S7, S8, and additional figures
-     - on different retinal datasets (Notebooks 06, 07, 08), producing Figures S2, S5, and additional figures
+     - on the PBMC dataset (Notebooks `01`, `04`, `05`, producing Figures 2, S3, S4, S6, S7, S8, and additional figures)
+     - on different retinal datasets (Notebooks `06`, `07`, `08`, producing Figures S2, S5, and additional figures)
+     
+Each of the analyses will first preprocess and filter the datasets. Next, computationally expensive tasks are done (NB regression fits, GLM-PCA, t-SNE, simulations of negative control data, ..) and the results are saved as files. For the very slow tasks in _Benchmarking normalization_ analysis, this is done in separate _compute_ notebooks. Finally, the results files are loaded for plotting (again in separate notebooks for the Benchmarking analysis).
 
+We recommend to run the code on a powerful machine with at least 150 GB RAM.
 
 ### Pre-requisites
 
@@ -44,10 +47,7 @@ Then, you can step through our analysis by following the sequence of the noteboo
  - extract files `genes.tsv` and `matrix.mtx` to `umi-normalization/datasets/33k_pbmc/`
  - download 'Clustering analysis' (23.81 MB) from the same website
  - extract folder `analysis` to `umi-normalization/datasets/33k_pbmc/` as well
-
-
-
-
+ 
 ##### 10x control / Svensson 2017
  - visit https://figshare.com/articles/svensson_chromium_control_h5ad/7860092 
  - download `svensson_chromium_control.h5ad` (18.82 MB)
