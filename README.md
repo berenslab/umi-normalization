@@ -30,6 +30,14 @@ For questions or feedback, feel free to use the issue system or email us.
 ### Pre-requisites
 
 - Python (version used in the paper: `3.6.9`)
+- `numpy` (version used in this paper `1.18.1`)
+- `pandas` (version used in this paper `1.0.1`)
+- `scipy` (version used in this paper `1.4.1`)
+- `seaborn` (version used in this paper `0.10.0`)
+- `matplotlib` (version used in this paper `3.1.3`)
+- `statsmodels` (version used in this paper `0.11.1`)
+- `sklearn` (version used in this paper `0.22.1`)
+- `anndata` from https://anndata.readthedocs.io (version used in this paper `0.7.1`)
 - `FIt-SNE` by George C. Linderman from https://github.com/KlugerLab/FIt-SNE (version used in the paper: `1.2.1`, https://github.com/KlugerLab/FIt-SNE/releases/tag/v1.2.1)
 - `FFTW` from http://www.fftw.org (version used in the paper: `3.3.8`)
 - `rpy2` from https://rpy2.github.io/ (version used in the paper `3.2.6`, along with R version `3.6.2`)
