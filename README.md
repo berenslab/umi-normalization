@@ -4,7 +4,7 @@
 
 ### How to use this repository
 
-This repository contains the code to reproduce the analysis presented in the most recent version (v3) of our paper on UMI data normalization (Lause, Berens & Kobak (2021), https://www.biorxiv.org/content/10.1101/2020.12.01.405886v2). The code used for versions v1 and v2 of the paper is available under the tags `1.0` and `2.0` in this repository.
+This repository contains the code to reproduce the analysis presented in the most recent version (v3) of our paper on UMI data normalization ([Lause, Berens & Kobak (2021)](https://doi.org/10.1101/2020.12.01.405886 )). The code used for versions v1 and v2 of the paper is available under the tags `1.0` and `2.0` in this repository.
 
 To start, follow these steps:
 
