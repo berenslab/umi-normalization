@@ -4,7 +4,7 @@
 
 ### How to use this repository
 
-This repository contains the code to reproduce the analysis presented in the most recent version (v2) of our paper on UMI data normalization (Lause, Berens & Kobak (2020), https://www.biorxiv.org/content/10.1101/2020.12.01.405886v2). The code used for version v1 of the paper is available under the tag `1.0` in this repository.
+This repository contains the code to reproduce the analysis presented in the most recent version (v3) of our paper on UMI data normalization (Lause, Berens & Kobak (2021), https://www.biorxiv.org/content/10.1101/2020.12.01.405886v2). The code used for versions v1 and v2 of the paper is available under the tags `1.0` and `2.0` in this repository.
 
 To start, follow these steps:
 
@@ -13,19 +13,20 @@ To start, follow these steps:
  - go to `tools.py` and adapt the three import paths as needed
  - follow the dataset download instructions below
  
-Then, you can step through our analysis by following the sequence of the notebooks. There are six independent analyses:
+Then, you can step through our full analysis by simply following the sequence of the notebooks. If you want to reproduce only parts of our analysis, there are six independent analysis pipelines that you can run individually:
 
  - Reproduction of the NB regression model by Hafemeister & Satija (2019) and investigation of alternative models (Notebookes `01` & `02`, producing Figure 1 from our paper)
  - Estimation of technical overdispersion from negative control datasets (Notebooks `01` & `03`, producing Figure S1)
  - Benchmarking normalization by Analytical Pearson residuals vs. GLM-PCA vs. standard methods:
-     - on the 33k PBMC dataset (Notebooks `01`, `041`, `042`, `05`, producing Figures 2, S2, S4, S5, S6, and additional figures)
-     - on different retinal datasets (Notebooks `06`, `07`, `08`, producing Figures 3, S3, and additional figures)
-     - on the ground-truth dataset created from FACS-sorted PBMCs, Notebook `101`, `102`, producing Figures 5 and S8)
- - Analysis of the 2-million cell mouse organogenesis dataset, Notebook `09`, producing Figures 4 and S7)
+     - on the 33k PBMC dataset (Notebooks `01`, `041`, `042`, `05`, producing Figures 2, S2, S4, S5, and additional figures)
+     - on different retinal datasets (Notebooks `06`, `07`, `081`, producing Figures 3, S3, and additional figures)
+     - on the ground-truth dataset created from FACS-sorted PBMCs (Notebook `101`, `102`, producing Figures 5 and S7)
+ - Analysis of the 2-million cell mouse organogenesis dataset (Notebook `091`, producing Figures 4 and S6, and additional figures)
+ - Comparison to [Sanity](https://github.com/jmbreda/Sanity) (Notebooks `06`, `07`, `081` and `082` for retina datasets and `091` and `092` for the organogenesis dataset, producing additional figures). These pipelines will require you to run Sanity from the command line; see notebooks `082` and `092` for instructions.
 
 Note that `041` and `101` are R notebooks, the remaining are Python notebooks.
 
-Each of the analyses will first preprocess and filter the datasets. Next, computationally expensive tasks are done (NB regression fits, GLM-PCA, t-SNE, simulations of negative control data, ..) and the results are saved as files. For the Benchmarking normalization analysis, this is done in separate notebooks. Finally, the results files are loaded for plotting (again in separate notebooks for the Benchmarking analysis).
+Each of the analyses will first preprocess and filter the datasets. Next, computationally expensive tasks are done (NB regression fits, GLM-PCA, t-SNE, simulations of negative control data, ..) and the results are saved as files. For some analyses, this is done in separate notebooks. Finally, the results files are loaded for plotting (again in separate notebooks for some analyses).
 
 We recommend to run the code on a powerful machine with at least 250 GB RAM.
 
@@ -89,6 +90,8 @@ Matrix_1.3-2           assertthat_0.2.1       R6_2.5.0              globals_0.14
 
 
 ### Download instructions for presented datasets
+
+All accession numbers can also be found in Table S2 of our paper.
 
 ##### 33k PBMC dataset
 
