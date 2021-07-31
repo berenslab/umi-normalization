@@ -316,6 +316,39 @@ def run_glmpca(counts,fam,theta = 100, penalty = 1, optimize_nb_theta=True, maxI
     print('Saving at', path)
     with open(path,'wb') as f:
         pickle.dump(res,f)
+        
+        
+def pickle_sanity_results(filename, show_progress=False):
+
+    with open(filename, "r") as f:
+        linedata = []
+        prefixes = []
+        if show_progress:
+            print('reading in genes line by line:')
+        for i,line in enumerate(f.readlines()):
+            if show_progress:
+                print(i,end=' ')
+
+            if i==0:            
+                headers = np.array(line.replace('GeneID\t','').replace('\n','').split('\t'))
+                continue
+
+            prefix = 'Gene_%u\t' % (i-1)        
+            assert prefix == line[:len(prefix)]
+            prefixes.append(line[:len(prefix)].replace('\t',''))
+
+            ldat=np.fromstring(line[len(prefix):], sep = "\t")
+            linedata.append(ldat)
+
+
+
+    print('\n')
+    print('stacking lines')
+    sanity_ltqs=np.vstack(linedata).T
+    print('saving pickle')
+
+    with open(filename+'.pickle','wb') as f:
+        pickle.dump(sanity_ltqs,f)
     
     
 ### Code extended from https://github.com/theislab/scanpy/pull/1715 for Deviance residuals
