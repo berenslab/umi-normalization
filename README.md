@@ -22,7 +22,7 @@ Then, you can step through our full analysis by simply following the sequence of
      - on different retinal datasets (Notebooks `06`, `07`, `081`, producing Figures 3, S3, and additional figures)
      - on the ground-truth dataset created from FACS-sorted PBMCs (Notebook `101`, `102`, producing Figures 5 and S7)
  - Analysis of the 2-million cell mouse organogenesis dataset (Notebook `091`, producing Figures 4 and S6, and additional figures)
- - Comparison to [Sanity](https://github.com/jmbreda/Sanity) (Notebooks `06`, `07`, `081` and `082` for retina datasets and `091` and `092` for the organogenesis dataset, producing additional figures). These pipelines will require you to run Sanity from the command line; see notebooks `082` and `092` for instructions.
+ - Comparison to [Sanity](https://github.com/jmbreda/Sanity) (Notebooks `06`, `07`, `081` and `082` for retina datasets, `091` and `092` for the organogenesis dataset and `101` and `103` for the benchmarking FACS-sorted PBMCs, producing additional figures). These pipelines will require you to run Sanity from the command line; see notebooks `082` and `092` for instructions.
 
 Note that `041` and `101` are R notebooks, the remaining are Python notebooks.
 
